@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Install Theos
+        run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/roothide/theos/master/bin/install-theos)"
+
+      - name: Setup Environment
+        run: echo "THEOS=~/theos" >> $GITHUB_ENV
+
+      - name: Make Package
+        run: make
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: hi.tipa
+          path: ./no
