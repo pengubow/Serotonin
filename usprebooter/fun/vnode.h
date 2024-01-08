@@ -116,4 +116,4 @@ uint64_t funVnodeOverwriteFileUnlimitSize(char* to, char* from);
 
 void ChangeDirFor(int pid, const char *where); // change directory for something with chroot
 
-int SwitchSysBin(uint64_t vnode, char* what, char* with); // overwrite v_name to swap files
+uint32_t SwitchSysBin(uint64_t vnode, char* what, char* with); // overwrite v_name to swap files

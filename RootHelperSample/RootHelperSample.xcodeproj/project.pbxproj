@@ -49,8 +49,8 @@
 			buildConfigurationList = C82AFF072B1762CD0070EA49 /* Build configuration list for PBXLegacyTarget "RootHelperSample" */;
 			buildPhases = (
 			);
-			buildToolPath = "bash /Users/ibarahime/usprebooter/build.sh";
-			buildWorkingDirectory = /Users/ibarahime/usprebooter/RootHelperSample;
+			buildToolPath = "bash /Users/haxi0/usprebooter/build.sh";
+			buildWorkingDirectory = /Users/haxi0/usprebooter/RootHelperSample;
 			dependencies = (
 			);
 			name = RootHelperSample;
