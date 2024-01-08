@@ -50,6 +50,8 @@ uint32_t off_fp_glob = 0;
 uint32_t off_fg_data = 0;
 uint32_t off_fg_flag = 0;
 uint32_t off_vnode_v_ncchildren_tqh_first = 0;
+uint32_t off_vnode_v_ncchildren_tqh_last = 0;
+uint32_t off_vnode_v_nclinks_lh_first = 0;
 uint32_t off_vnode_v_iocount = 0;
 uint32_t off_vnode_v_usecount = 0;
 uint32_t off_vnode_v_flag = 0;
@@ -73,7 +75,10 @@ uint32_t off_mount_mnt_fsgroup = 0;
 uint32_t off_mount_mnt_devvp = 0;
 uint32_t off_mount_mnt_flag = 0;
 uint32_t off_specinfo_si_flags = 0;
+uint32_t off_namecache_nc_dvp = 0;
 uint32_t off_namecache_nc_vp = 0;
+uint32_t off_namecache_nc_hashval = 0;
+uint32_t off_namecache_nc_name = 0;
 uint32_t off_namecache_nc_child_tqe_prev = 0;
 uint32_t off_ipc_space_is_table = 0;
 uint32_t off_ubc_info_cs_blobs = 0;
@@ -162,6 +167,8 @@ void _offsets_init(void) {
         
         //https://github.com/apple-oss-distributions/xnu/blob/xnu-8792.41.9/bsd/sys/vnode_internal.h#L158
         off_vnode_v_ncchildren_tqh_first = 0x30;
+        off_vnode_v_ncchildren_tqh_last = 0x38;
+        off_vnode_v_nclinks_lh_first = 0x40;
         off_vnode_v_iocount = 0x64;
         off_vnode_v_usecount = 0x60;
         off_vnode_v_flag = 0x54;
@@ -191,7 +198,10 @@ void _offsets_init(void) {
         off_specinfo_si_flags = 0x10;
         
         //https://github.com/apple-oss-distributions/xnu/blob/xnu-8792.41.9/bsd/sys/namei.h#L243
+        off_namecache_nc_dvp = 0x40;
         off_namecache_nc_vp = 0x48;
+        off_namecache_nc_hashval = 0x50;
+        off_namecache_nc_name = 0x58;
         off_namecache_nc_child_tqe_prev = 0x10;
         
         //https://github.com/apple-oss-distributions/xnu/blob/xnu-8792.41.9/osfmk/ipc/ipc_space.h#L123
